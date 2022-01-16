@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html manifest="site.manifest">
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+	<style type="text/css">
+		#map { height: 501px; }
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<h1>Cette page est accessible hors ligne</h1>
+		<p>Elle possède une icone d'application pour les smartphones.</p>
+		<img src="earth-folder.png" />
+	</div>
+	 <div id="map"></div>	 
+</body>
+<script type="text/javascript">
+	var map = L.map('map').setView([29.692420624609735, -9.725053198964137], 13);
+	 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	 }).addTo(map);
+
+	L.marker([29.692420624609735, -9.725053198964137]).addTo(map);
+	var circle = L.circle([29.692420624609735, -9.725053198964137], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 500
+}).addTo(map);
+</script>
+
+</html>
